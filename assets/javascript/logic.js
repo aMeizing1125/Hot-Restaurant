@@ -7,7 +7,7 @@ var path = require("path");
 
 //Array of objects for reservations
 var reservations = require("./reservations.js");
-
+var waitlistdata = require("./waitlist.js");
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -24,12 +24,36 @@ app.get("/api/reservations", function(req, res) {
     return res.json(reservations);
 });
 
+app.get("/api/waitlist", function (req, res) {
+    return res.json(waitlistdata);
+});
+
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../../index.html"));
 });
 
 app.get("/view", function(req, res) {
     res.sendFile(path.join(__dirname, "../../view.html"));
+});
+app.post('api/reservations', function(req, res){
+    if(reservations.length < 5) {
+        reservations.push(req.body);
+        res.json(false);
+    }
+    else {
+        waitlistdata.push(req.body);
+        res.json(false);
+    }
+}); 
+app.post('/api/clear', function(){
+    reservations = [];
+    waitlistdata = [];
+
+    console.log(reservations);
+    console.log(waitlistdata);
+})
+app.use(function(req, res){
+    res.sendFile(path.join(__dirname + '../../table.html'))
 });
 
 
