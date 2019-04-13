@@ -2,58 +2,45 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Star Wars - Express</title>
-    <!-- Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Star Wars - Express</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
 
-<<<<<<< HEAD
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
       <h1>Hot Restaurant</h1>
-      <h3>Current Reservations and Waiting List</h3>
+      <h3>The best restaurant in town!</h3>
       <hr>
-      <a href="/add"><button class="btn btn-danger btn-lg"><span class="fa fa-plus"></span> Add New
-          Character</button></a>
+      <a href="./index.html"><button class="btn btn-success btn-lg"><span class="fa fa-plus"></span> Add A
+          Table </button></a>
+      <a href="./view.html"><button class="btn btn-danger btn-lg"><span class="fa fa-vcard"></span> View
+          Tables </button></a>
     </div>
-    <div class="row">
 
-      <div class="col-12">
-=======
-    <div class="container">
-        <div class="jumbotron text-center">
-            <h1>Hot Restaurant</h1>
-            <h3>The best restaurant in town!</h3>
-            <hr>
-            <a href="/add"><button class="btn btn-success btn-lg"><span class="fa fa-plus"></span> Add A
-                    Table </button></a>
-            <a href="/api/characters"><button class="btn btn-danger btn-lg"><span class="fa fa-vcard"></span> View
-                    Tables </button></a>
-        </div>
->>>>>>> a31064c544e5924bb1419287d35ccd5497ea9e2b
+    <form class="form-horizontal">
+      <fieldset>
 
-        <form class="form-horizontal">
-          <fieldset>
-          
-          <!-- Form Name -->
-          <legend>Form Name</legend>
-          
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="party">Party Name</label>  
-            <div class="col-md-4">
-            <input id="party" name="party" type="text" placeholder="Hampton Party" class="form-control input-md" required="">
-              
-            </div>
+        <!-- Form Name -->
+        <legend>Form Name</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="party">Party Name</label>
+          <div class="col-md-4">
+            <input id="party" name="party" type="text" placeholder="Hampton Party" class="form-control input-md"
+              required="">
+
+
           </div>
-<<<<<<< HEAD
+
           <div class="card-body">
             <input type="text" id="character-search" class="form-control">
             <br>
@@ -84,76 +71,90 @@
     </div>
   </div>
 
-  <script type="text/javascript">
-    $("#search-btn").on("click", function () {
-      var searchedCharacter = $("#character-search").val().trim();
 
-      // Using a RegEx Pattern to remove spaces from searchedCharacter
-      // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-      searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
 
-      $.get("/api/characters/" + searchedCharacter, function (data) {
-        console.log(data);
-        if (data) {
-          $("#stats").show();
-          $("#name").text(data.name);
-          $("#role").text(data.role);
-          $("#age").text(data.age);
-          $("#force-points").text(data.forcePoints);
-        } else {
-          $("#name").text("The force is not strong with this one. Your character was not found.");
-          $("#stats").hide();
-        }
-      });
-    });
-  </script>
-=======
-          
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="quantity"># of People</label>  
-            <div class="col-md-2">
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="quantity"># of People</label>
+          <div class="col-md-2">
+
             <input id="quantity" name="quantity" type="text" placeholder="" class="form-control input-md" required="">
-              
-            </div>
-          </div>
-          
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="phone">Phone #</label>  
-            <div class="col-md-4">
-            <input id="phone" name="phone" type="text" placeholder="(123)-222-4411" class="form-control input-md" required="">
-              
-            </div>
-          </div>
-          
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="email">Email</label>  
-            <div class="col-md-4">
-            <input id="email" name="email" type="text" placeholder="jon@aol.com" class="form-control input-md" required="">
-              
-            </div>
-          </div>
-          
-          <!-- Select Basic -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="tables">Preffered Table</label>
-            <div class="col-md-4">
-              <select id="tables" name="tables" class="form-control">
-                <option value="1">Option one</option>
-                <option value="2">Option two</option>
-              </select>
-            </div>
-          </div>
-          
-          </fieldset>
-          </form>
-          
 
-        <a href="./table.html">Add A Table</a> | <a href="./view.html">View All Tables</a>
-    </div>
->>>>>>> a31064c544e5924bb1419287d35ccd5497ea9e2b
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="phone">Phone #</label>
+          <div class="col-md-4">
+            <input id="phone" name="phone" type="text" placeholder="(123)-222-4411" class="form-control input-md"
+              required="">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="email">Email</label>
+          <div class="col-md-4">
+            <input id="email" name="email" type="text" placeholder="jon@aol.com" class="form-control input-md"
+              required="">
+
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="tables">Preffered Table</label>
+          <div class="col-md-4">
+            <select id="tables" name="tables" class="form-control">
+              <option value="1">Option one</option>
+              <option value="2">Option two</option>
+            </select>
+          </div>
+        </div>
+
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="submit"></label>
+          <div class="col-md-4">
+            <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+
+
+    <a href="./table.html">Add A Table</a> | <a href="./view.html">View All Tables</a>
+  </div>
+
+<script type="text/javascript">
+  $("#search-btn").on("click", function () {
+    var searchedCharacter = $("#character-search").val().trim();
+
+    // Using a RegEx Pattern to remove spaces from searchedCharacter
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+    $.get("/api/characters/" + searchedCharacter, function (data) {
+      console.log(data);
+      if (data) {
+        $("#stats").show();
+        $("#name").text(data.name);
+        $("#role").text(data.role);
+        $("#age").text(data.age);
+        $("#force-points").text(data.forcePoints);
+      } else {
+        $("#name").text("The force is not strong with this one. Your character was not found.");
+        $("#stats").hide();
+      }
+    });
+  });
+</script>
 </body>
 
 </html>
