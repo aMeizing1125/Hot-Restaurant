@@ -28,6 +28,7 @@ app.get("/api/waitlist", function (req, res) {
     return res.json(waitlistdata);
 });
 
+//Main html Files--------------------
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../../index.html"));
 });
@@ -35,6 +36,12 @@ app.get("/", function(req, res) {
 app.get("/view", function(req, res) {
     res.sendFile(path.join(__dirname, "../../view.html"));
 });
+
+app.get("/table", function(req, res) {
+    res.sendFile(path.join(__dirname, "../../table.html"));
+});
+
+//API Files--------------------------
 app.post('api/reservations', function(req, res){
     if(reservations.length < 5) {
         reservations.push(req.body);
@@ -45,6 +52,7 @@ app.post('api/reservations', function(req, res){
         res.json(false);
     }
 }); 
+
 app.post('/api/clear', function(){
     reservations = [];
     waitlistdata = [];
@@ -52,10 +60,10 @@ app.post('/api/clear', function(){
     console.log(reservations);
     console.log(waitlistdata);
 })
-app.use(function(req, res){
-    res.sendFile(path.join(__dirname + '../../table.html'))
-});
 
+// app.use(function(req, res){
+//     res.sendFile(path.join(__dirname + '../../table.html'))
+// });
 
 // Starts the server to begin listening
 // =============================================================

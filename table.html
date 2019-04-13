@@ -19,9 +19,9 @@
       <h1>Hot Restaurant</h1>
       <h3>The best restaurant in town!</h3>
       <hr>
-      <a href="./index.html"><button class="btn btn-success btn-lg"><span class="fa fa-plus"></span> Home Page
+      <a href="/"><button class="btn btn-success btn-lg"><span class="fa fa-plus"></span> Home Page
         </button></a>
-      <a href="./view.html"><button class="btn btn-danger btn-lg"><span class="fa fa-vcard"></span> View
+      <a href="/view"><button class="btn btn-danger btn-lg"><span class="fa fa-vcard"></span> View
           Tables </button></a>
     </div>
     <div>
@@ -98,17 +98,16 @@
 
 
       var newReservation = {        
-        name: $("#name").val().trim(),
         id: $('#id').val().trim(),
+        name: $("#name").val().trim(),
         email: $("#email").val().trim(),
-        phone: $("#phone").val().trim(),
-       
+        phone: $("#phone").val().trim()
       };
 
       console.log(newReservation);
 
 
-      $.post("/api/tables", newReservation,
+      $.post("/api/reservations", newReservation,
         function (data) {
 
           // If a table is available... tell user they are booked.
