@@ -1,0 +1,24 @@
+{
+  "name": "HotRestaurant",
+  "version": "1.0.0",
+  "description": "HotRestaurant",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aMeizing1125/HotRestaurant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aMeizing1125/HotRestaurant/issues"
+  },
+  "homepage": "https://github.com/aMeizing1125/HotRestaurant#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  }
+}
