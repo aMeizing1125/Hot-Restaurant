@@ -2,88 +2,158 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Star Wars - Express</title>
-    <!-- Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Hot Restaurant</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="jumbotron text-center">
-            <h1>Hot Restaurant</h1>
-            <h3>The best restaurant in town!</h3>
-            <hr>
-            <a href="/table"><button class="btn btn-success btn-lg"><span class="fa fa-plus"></span> Add A
-                    Table </button></a>
-            <a href="/view"><button class="btn btn-danger btn-lg"><span class="fa fa-vcard"></span> View
-                    Tables </button></a>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Hot Restaurant</h1>
+      <h3>The best restaurant in town!</h3>
+      <hr>
+      <a href="./index.html"><button class="btn btn-primary btn-lg"><span class="fa fa-home"></span></button></a>
+      <a href="./view.html"><button class="btn btn-danger btn-lg"><span class="fa fa-vcard"></span> View
+          Tables </button></a>
+    </div>
+
+    <form class="form-horizontal">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Form Name</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="party">Party Name</label>
+          <div class="col-md-4">
+            <input id="party" name="party" type="text" placeholder="Hampton Party" class="form-control input-md"
+              required="">
+
+
+          </div>
+
+          <!-- <div class="card-body">
+            <input type="text" id="character-search" class="form-control">
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="search-btn"><span class="fa fa-search"></span>
+                Make Reservation
+              </button>
+
+            </div>
+          </div>
         </div>
 
-        <form class="form-horizontal">
-          <fieldset>
-          
-          <!-- Form Name -->
-          <legend>Form Name</legend>
-          
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="party">Party Name</label>  
-            <div class="col-md-4">
-            <input id="party" name="party" type="text" placeholder="Hampton Party" class="form-control input-md" required="">
-              
+        <div class="card">
+          <div class="card-header">
+            <h3><strong>Current Reservations</strong></h3>
+          </div>
+          <div class="card-body">
+            <h2 id="name">Table #</h2>
+            <div id="stats">
+              <h3><strong>ID: </strong> <span class="ID">ID placeholder</span></h3>
+              <h3><strong>Name: </strong> <span class="name">Name placeholder</span></h3>
+              <h3><strong>Email: </strong> <span class="email">Email placeholder</span></h3>
+              <h3><strong>Phone: </strong> <span class="phone">Phone placeholder</span></h3>
             </div>
           </div>
-          
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="quantity"># of People</label>  
-            <div class="col-md-2">
-            <input id="quantity" name="quantity" type="text" placeholder="" class="form-control input-md" required="">
-              
-            </div>
-          </div>
-          
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="phone">Phone #</label>  
-            <div class="col-md-4">
-            <input id="phone" name="phone" type="text" placeholder="(123)-222-4411" class="form-control input-md" required="">
-              
-            </div>
-          </div>
-          
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="email">Email</label>  
-            <div class="col-md-4">
-            <input id="email" name="email" type="text" placeholder="jon@aol.com" class="form-control input-md" required="">
-              
-            </div>
-          </div>
-          
-          <!-- Select Basic -->
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="tables">Preffered Table</label>
-            <div class="col-md-4">
-              <select id="tables" name="tables" class="form-control">
-                <option value="1">Option one</option>
-                <option value="2">Option two</option>
-              </select>
-            </div>
-          </div>
-          
-          </fieldset>
-          </form>
-          
-
-        <a href="./table.html">Add A Table</a> | <a href="./view.html">View All Tables</a>
+        </div>
+      </div>
     </div>
+  </div> -->
+
+
+
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="quantity"># of People</label>
+          <div class="col-md-2">
+
+            <input id="quantity" name="quantity" type="text" placeholder="" class="form-control input-md" required="">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="phone">Phone #</label>
+          <div class="col-md-4">
+            <input id="phone" name="phone" type="text" placeholder="(123)-222-4411" class="form-control input-md"
+              required="">
+
+          </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="email">Email</label>
+          <div class="col-md-4">
+            <input id="email" name="email" type="text" placeholder="jon@aol.com" class="form-control input-md"
+              required="">
+
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="tables">Preffered Table</label>
+          <div class="col-md-4">
+            <select id="tables" name="tables" class="form-control">
+              <option value="1">Option one</option>
+              <option value="2">Option two</option>
+            </select>
+          </div>
+        </div>
+
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="submit"></label>
+          <div class="col-md-4">
+            <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+
+
+    <a href="./table.html">Add A Table</a> | <a href="./view.html">View All Tables</a>
+  </div>
+
+<script type="text/javascript">
+  $("#search-btn").on("click", function () {
+    var searchedCharacter = $("#character-search").val().trim();
+
+    // Using a RegEx Pattern to remove spaces from searchedCharacter
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+    $.get("/api/characters/" + searchedCharacter, function (data) {
+      console.log(data);
+      if (data) {
+        $("#stats").show();
+        $("#name").text(data.name);
+        $("#role").text(data.role);
+        $("#age").text(data.age);
+        $("#force-points").text(data.forcePoints);
+      } else {
+        $("#name").text("The force is not strong with this one. Your character was not found.");
+        $("#stats").hide();
+      }
+    });
+  });
+</script>
 </body>
 
 </html>
