@@ -28,31 +28,13 @@
         <table class="table text-center">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+            <tbody id="tableBody">
             </tbody>
         </table>
 
@@ -60,28 +42,46 @@
     </div>
 
     <script type="text/javascript">
-        $("#search-btn").on("click", function () {
-            var searchedCharacter = $("#character-search").val().trim();
-
-            // Using a RegEx Pattern to remove spaces from searchedCharacter
-            // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-            searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
-
-            $.get("/api/characters/" + searchedCharacter, function (data) {
+        function testing(){
+            console.log("working");
+            $.get("/api/reservations",function(data){
                 console.log(data);
-                if (data) {
-                    $("#stats").show();
-                    $("#name").text(data.name);
-                    $("#role").text(data.role);
-                    $("#age").text(data.age);
-                    $("#force-points").text(data.forcePoints);
-                }
-                else {
-                    $("#name").text("The force is not strong with this one. Your character was not found.");
-                    $("#stats").hide();
-                }
-            });
-        });
+                data.forEach(function(thisRes){
+                    console.log(thisRes);
+                    thisRow = $("<tr>");
+                    thisId=  $("<td>").text(thisRes.id);
+                    thisName = $("<td>").text(thisRes.name);
+                    thisEmail = $("<td>").text(thisRes.email);
+                    thisPhone = $("<td>").text(thisRes.phone);
+                    thisRow.append(thisId, thisName, thisEmail, thisPhone);
+                    $("#tableBody").append(thisRow);
+                })
+            })
+        }
+
+        testing();
+        // $("#search-btn").on("click", function () {
+        //     var searchedCharacter = $("#character-search").val().trim();
+
+        //     // Using a RegEx Pattern to remove spaces from searchedCharacter
+        //     // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+        //     searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+        //     $.get("/api/characters/" + searchedCharacter, function (data) {
+        //         console.log(data);
+        //         if (data) {
+        //             $("#stats").show();
+        //             $("#name").text(data.name);
+        //             $("#role").text(data.role);
+        //             $("#age").text(data.age);
+        //             $("#force-points").text(data.forcePoints);
+        //         }
+        //         else {
+        //             $("#name").text("The force is not strong with this one. Your character was not found.");
+        //             $("#stats").hide();
+        //         }
+        //     });
+        // });
     </script>
 </body>
 
