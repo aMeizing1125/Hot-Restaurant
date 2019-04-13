@@ -32,6 +32,9 @@ app.get("/view", function(req, res) {
     res.sendFile(path.join(__dirname, "../../view.html"));
 });
 
+app.get("/table", function(req, res) {
+    res.sendFile(path.join(__dirname, "../../table.html"));
+});
 
 // Starts the server to begin listening
 // =============================================================
